@@ -7,8 +7,6 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "stripe/stripe-php": "~2.0",
-        "laravel/cashier": "~5.0",
         "ramsey/uuid": "~2.8"
     },
     "require-dev": {

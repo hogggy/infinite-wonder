@@ -143,12 +143,6 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        /*
-         * Laravel Cashier
-         */
-        Laravel\Cashier\CashierServiceProvider::class,
-
     ],
 
     /*
