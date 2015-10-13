@@ -13,14 +13,38 @@
         <!-- Page Features -->
         <div class="row">
             <p>
-                Stuff about our company blah blah blah we build stuff blah blah
-                blah this is the stuff we make and we are cool blah blah 123 bl
-                blah this is the stuff we make and we are cool blah blah 123 bl
-                Stuff about our company blah blah blah we build stuff blah blah
+                Infinite Wonder is happy to introduce our first hydration pack. Light, durable, and covered
+                in extraordinary visionary art the design allows for a nearly seamless representation of the
+                featured artwork. This provides the unique experience of actually carrying a beautiful art
+                print that just so happens to be the perfect hydration pack to keep you hands free for your
+                outdoor activities.
             </p>
             <p>
-                This is another paragraph I am a robot beep boop this is the things
-                i say blah blah blah
+                Infinite Wonder is a small business founded in Peoria, Illinois by music festival and outdoor
+                enthusiasts. We hope that our products can be appreciated by all those who love adventures
+                and we will continue to support and promote artists as we grow and expand our inventory.
+                New products coming June 2016!
+            </p>
+        </div>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row text-center">
+            <h2>Contact Us</h2>
+        </div>
+        <!-- /.row -->
+        <hr>
+
+        <!-- Page Features -->
+        <div class="row">
+            <p>
+                Artists, musicians, teams, clubs, businesses, and personal orders or collaborations
+                are more than welcome! Please contact us.
+            </p>
+            <p>
+                Any questions, concerns, or comments please don't hesitate to email us. You will receive a response
+                within approximately 24 hours. We will promptly work to satisfy all of your needs!
             </p>
         </div>
     </div>
