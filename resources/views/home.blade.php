@@ -34,7 +34,7 @@
     <!-- Title -->
     <div class="row">
         <div class="col-lg-2 col-lg-offset-5">
-            <h3>Products</h3>
+            <h3>Top Sellers</h3>
         </div>
     </div>
     <!-- /.row -->
