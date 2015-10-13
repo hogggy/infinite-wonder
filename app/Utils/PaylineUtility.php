@@ -37,7 +37,7 @@ class PaylineUtility {
     private function stepOneXml(Address $address, $amount) {
         $xml = new \SimpleXMLElement("<sale></sale>");
         $xml->addChild("api-key", self::apiKey);
-        $xml->addChild("redirect-url", "google.com");
+        $xml->addChild("redirect-url", self::redirectUrl);
         $xml->addChild("amount", $amount);
         $xml->addChild("currency", "USD");
         $addressXml = $xml->addChild("shipping");
