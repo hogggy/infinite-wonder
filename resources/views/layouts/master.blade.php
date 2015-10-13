@@ -42,7 +42,7 @@
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1631"><a href="https://colorlib.com/dazzling/about/">About</a></li>
                             </ul>				</nav>
                         <div class="copyright col-md-6">
-                            <a href="https://colorlib.com/dazzling/" title="Dazzling Demo">Infinite Wonder</a> All rights reserved.	Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>
+                            <a href="/about" title="Infinite Wonder">Infinite Wonder</a> All rights reserved.</a>
                         </div>
                     </div><!-- .site-info -->
                     <div class="scroll-to-top"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
