@@ -16,7 +16,7 @@ class PaylineUtility {
 
     const apiKey = "2F822Rw39fx762MaV7Yy86jXGTC7sCDy";
     const postUrl = "https://secure.paylinedatagateway.com/api/v2/three-step";
-    const redirectUrl=
+    const redirectUrl="http://52.89.38.243/";
 
     private $shippingFields = ['address1', 'address2', 'state', 'city', 'postal', 'country'];
 
