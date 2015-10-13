@@ -16,7 +16,6 @@ class PaylineUtility {
 
     const apiKey = "2F822Rw39fx762MaV7Yy86jXGTC7sCDy";
     const postUrl = "https://secure.paylinedatagateway.com/api/v2/three-step";
-    const redirectUrl="http://52.89.38.243/";
 
     private $shippingFields = ['address1', 'address2', 'state', 'city', 'postal', 'country'];
 
@@ -35,9 +34,10 @@ class PaylineUtility {
     }
 
     private function stepOneXml(Address $address, $amount) {
+        $redirectUrl = $_SERVER['HTTP_HOST'] . "/shop";
         $xml = new \SimpleXMLElement("<sale></sale>");
         $xml->addChild("api-key", self::apiKey);
-        $xml->addChild("redirect-url", self::redirectUrl);
+        $xml->addChild("redirect-url", $redirectUrl);
         $xml->addChild("amount", $amount);
         $xml->addChild("currency", "USD");
         $addressXml = $xml->addChild("shipping");
