@@ -7,14 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Laravel\Cashier\Contracts\Billable as BillableContract;
-use Laravel\Cashier\Billable;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 
-class User extends UuidModel implements AuthenticatableContract, CanResetPasswordContract, BillableContract
+class User extends UuidModel implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword, Billable;
+    use Authenticatable, CanResetPassword;
 
     /**
      * The database table used by the model.
@@ -41,10 +39,4 @@ class User extends UuidModel implements AuthenticatableContract, CanResetPasswor
         return $this->hasMany('App\Models\Cart');
     }
 
-    public function registerCustomer($token) {
-        \Stripe\Stripe::setApiKey($this->getStripeKey());
-        $json = \Stripe\Customer::create(array("source" => $token));
-        $this->stripe_id = $json->id;
-        $this->save();
-    }
 }
