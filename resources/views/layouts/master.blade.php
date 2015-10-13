@@ -17,7 +17,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div id="logo">
-                            <span class="site-name"><a class="navbar-brand" href="/" title="Dazzling Demo" rel="home">Infinite Wisdom</a></span>
+                            <span class="site-name"><a class="navbar-brand" href="/" title="Dazzling Demo" rel="home">Infinite Wonder</a></span>
                         </div><!-- end of #logo -->
                     </div>
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -42,7 +42,7 @@
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1631"><a href="https://colorlib.com/dazzling/about/">About</a></li>
                             </ul>				</nav>
                         <div class="copyright col-md-6">
-                            <a href="https://colorlib.com/dazzling/" title="Dazzling Demo">Dazzling Demo</a> All rights reserved.					Theme by <a href="http://colorlib.com/wp/" target="_blank">Colorlib</a> Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>
+                            <a href="https://colorlib.com/dazzling/" title="Dazzling Demo">Infinite Wonder</a> All rights reserved.	Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>
                         </div>
                     </div><!-- .site-info -->
                     <div class="scroll-to-top"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
