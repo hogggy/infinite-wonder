@@ -104,7 +104,7 @@ $(function() {
                 expMonth: month.val(),
                 expYear: year.val(),
                 lastFour: last4,
-                sameAsShipping: $('#same-as-shipping').checked
+                sameAsShipping: $('#same-as-shipping').is(':checked')
             }
         });
 
@@ -117,7 +117,7 @@ $(function() {
     });
 
     function saveBillingAddress() {
-        if ($('#same-as-shipping').checked == false) {
+        if ($('#same-as-shipping').is(':checked') == false) {
             var form = $('#payment-form');
             $.ajax({
                 method: "post",
