@@ -88,7 +88,7 @@ class CartController extends Controller{
         $cart->exp_month = $request->input('expMonth');
         $cart->exp_year = $request->input('expYear');
         Log::error($request->input('sameAsShipping'));
-        $cart->same_as_shipping = $request->input('sameAsShipping');
+        $cart->same_as_shipping = $request->input('sameAsShipping') == "true";
         $cart->status = Cart::STATUS_CHECKOUT;
         if ($cart->same_as_shipping) {
             $billing = $cart->billingAddress();
