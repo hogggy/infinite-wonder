@@ -53,4 +53,20 @@ class PaylineUtility {
         return $xml->asXML();
     }
 
+    public function stepThree($token) {
+        $client = new Client();
+        $xml = new \SimpleXMLElement("<complete-action></complete-action>");
+        $xml->addChild("api-key", self::apiKey);
+        $xml->addChild("token-id", $token);
+        $request = new Request(
+            "POST",
+            self::postUrl,
+            array('Content-Type' => 'text/xml; charset=UTF8'),
+            $xml
+        );
+        $response = $client->send($request);
+
+        return $response;
+    }
+
 }

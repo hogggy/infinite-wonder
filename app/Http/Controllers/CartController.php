@@ -81,9 +81,28 @@ class CartController extends Controller{
         return $this->success(array('itemId' => $itemId, 'quantity' => $quantity));
     }
 
+    public function addCardInfo(Request $request) {
+        $user = $this->getUserFromCookies($request);
+        $cart = $this->getCartOrNewCart($user);
+        $cart->last_four = $request->input('lastFour');
+        $cart->exp_month = $request->input('expMonth');
+        $cart->exp_year = $request->input('expYear');
+        $cart->same_as_shipping = $request->input('sameAsShipping');
+        $cart->status = Cart::STATUS_CHECKOUT;
+        if ($cart->same_as_shipping) {
+            $billing = $cart->billingAddress();
+            if (!empty($billing)) {
+                $billing->delete();
+            }
+        }
+        $cart->save();
+
+        return $this->success();
+    }
+
     public function getCart(Request $request) {
         $user = $this->getUserFromCookies($request);
-        $cart = $user->carts()->where('closed', '=', false)->first();
+        $cart = $user->carts()->where('closed', '=', 0)->first();
         if (!$cart) {
             return $this->success();
         }

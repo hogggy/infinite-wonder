@@ -18,5 +18,9 @@ $(function() {
 
     $('#go-to-cart').click(function(){
         window.location.href = "/my-cart";
-    })
+    });
+
+    $('#productCarousel').carousel({
+        interval: false
+    });
 });

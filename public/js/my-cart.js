@@ -92,14 +92,53 @@ $(function() {
             return false;
         }
 
-        return true;
+        saveBillingAddress();
+        var month = $(this).find("[name='month']");
+        var year = $(this).find("[name='year']");
+        var ccNumber = $(this).find("[name='billing-cc-number']").val();
+        var last4 =  ccNumber.substr(ccNumber.length - 4);
+        $.ajax({
+            method: "post",
+            url: "/cart/card",
+            data: {
+                expMonth: month.val(),
+                expYear: year.val(),
+                lastFour: last4,
+                sameAsShipping: $('#same-as-shipping').checked
+            }
+        });
 
+        var exp = $(this).find("[name='billing-cc-exp']");
+        exp.val(month.val() + year.val());
+        month.remove();
+        year.remove();
+
+        return true;
     });
+
+    function saveBillingAddress() {
+        if ($('#same-as-shipping').checked == false) {
+            var form = $('#payment-form');
+            $.ajax({
+                method: "post",
+                url: "/address",
+                data: {
+                    type: "billing",
+                    name: form.find("[name='billing-account-name']").val(),
+                    address1: form.find("[name='billing-address1']").val(),
+                    address2: form.find("[name='billing-address2']").val(),
+                    city: form.find("[name='billing-city']").val(),
+                    state: form.find("[name='billing-state']").val(),
+                    postal: form.find("[name='billing-postal']").val(),
+                    country: form.find("[name='billing-country']").val()
+                }
+            })
+        }
+    }
 
     function copyShippingAddress() {
         var shippingInfo = $('#shipping-form').serializeArray();
         $.each(shippingInfo, function(index, item) {
-            console.log(item);
             var el = $('.billing-address').find("[name='billing-" + item.name + "']");
             if (el) {
                 el.val(item.value);
@@ -119,7 +158,6 @@ $(function() {
                 url: "/address",
                 data: $(this).serialize()
             }).done(function(data){
-                console.log(data);
                 $('.shippingInfo').slideUp(1000);
                 $('.billingInfo').show();
                 copyShippingAddress();

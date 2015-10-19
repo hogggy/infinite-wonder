@@ -24,11 +24,13 @@ class BeforeMiddleware
         $price = 0;
         if (!is_null($userId)) {
             $user = User::find($userId);
-            $cart = $user->carts()->where('closed', false)->first();
-            foreach ($cart->items()->get() as $item) {
-                $product = $item->product()->first();
-                $price += $product->price * $item->quantity;
-                $cartItems += $item->quantity;
+            if (!is_null($user)) {
+                $cart = $user->carts()->whereIn('status', array(0,1))->first();
+                foreach ($cart->items()->get() as $item) {
+                    $product = $item->product()->first();
+                    $price += $product->price * $item->quantity;
+                    $cartItems += $item->quantity;
+                }
             }
         }
         view()->share('cartItemCount', $cartItems);

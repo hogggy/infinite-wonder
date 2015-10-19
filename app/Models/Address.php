@@ -27,7 +27,7 @@ class Address extends Model {
      *
      * @var array
      */
-    protected $fillable = ['name', 'address1', 'address2', 'state', 'city', 'zip', 'country', 'type'];
+    protected $fillable = ['name', 'address1', 'address2', 'state', 'city', 'postal', 'country', 'type'];
 
     public function cart(){
         $this->belongsTo('App\Models\Cart');

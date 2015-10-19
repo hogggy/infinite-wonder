@@ -24,10 +24,9 @@ Route::post('cart/items', 'CartController@addToCart');
 Route::delete('cart/items/{id}', 'CartController@removeFromCart');
 Route::put('cart/items', 'CartController@changeQuantity');
 Route::get('cart', 'CartController@getCart');
+Route::post('cart/card', 'CartController@addCardInfo');
 
-Route::post('user/address', 'UserController@addAddress');
 Route::post('address', 'AddressController@address');
-Route::post('address/billing', 'AddressController@address');
 
 Route::get('product/{id}', function($id) {
     return view('product', array('product' => App\Models\Product::find($id)->first()));
@@ -36,6 +35,8 @@ Route::get('product/{id}', function($id) {
 Route::get('about', function() {
     return view('about', array());
 });
+Route::get('review', 'PageController@review');
+Route::get('thank-you', 'PageController@thankYou');
 
 
 $path = storage_path().'/logs/query.log';

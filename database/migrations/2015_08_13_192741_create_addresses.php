@@ -18,7 +18,7 @@ class CreateAddresses extends Migration
             $table->char('type', 10);
             $table->string('address1');
             $table->string('address2');
-            $table->string('state', 2);
+            $table->string('state');
             $table->string('city');
             $table->integer('postal');
             $table->string('country');

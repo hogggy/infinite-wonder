@@ -20,8 +20,17 @@ class AddressController extends Controller{
         $cart = $this->getCartOrNewCart($user);
         $user->email = $request->get('email');
         $user->save();
-        $address = new Address($request->all());
-        $cart->addresses()->save($address);
+        $address = null;
+        if ($request->input('type') == Address::TYPE_SHIPPING) {
+            $address = $cart->shippingAddress();
+        } else if ($request->input('type') == Address::TYPE_BILLING) {
+            $address = $cart->billingAddress();
+        }
+        if (!$address) {
+            $address = new Address();
+            $cart->addresses()->save($address);
+        }
+        $address->fill($request->all());
         $address->save();
 
         if ( $address->type == Address::TYPE_SHIPPING ) {

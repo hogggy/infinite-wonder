@@ -1,0 +1,58 @@
+.review-group {
+    background-color: white;
+    margin: 20px;
+    padding: 10px 30px 10px 30px;
+    box-shadow: 0 3px 0 #e1e5e8;
+}
+
+.title a {
+    margin-top: 10px;
+}
+
+.title a:hover {
+    cursor: hand;
+}
+
+.cart-table {
+    font-size: small;
+    margin-bottom: 10px;
+}
+
+div.title>a {
+    float: right;
+}
+
+div.title>h4 {
+    float: left;
+}
+
+table.cart-table>tbody>tr>td {
+    padding: 4px;
+    border-top-width: 0;
+}
+
+.prices-table {
+    font-size: small;
+}
+
+table.prices-table>tbody>tr>td {
+    padding: 2px;
+    border-top-width: 0;
+}
+
+td.quantity {
+    width: 10%;
+}
+
+td.name {
+    width: 70%;
+}
+
+#confirm {
+    background-color: #f08573;
+    color: #fbfffa;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 20px 30px;
+    border: 0;
+}

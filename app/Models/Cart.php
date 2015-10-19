@@ -11,6 +11,10 @@ class Cart extends UuidModel
     */
     protected $table = 'cart';
 
+    const STATUS_OPEN = 0;
+    const STATUS_CHECKOUT = 1;
+    const STATUS_CLOSED = 2;
+
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
@@ -24,7 +28,11 @@ class Cart extends UuidModel
     }
 
     public function shippingAddress() {
-        $this->addresses()->where("type", Address::TYPE_SHIPPING)->first();
+        return $this->addresses()->where("type", Address::TYPE_SHIPPING)->first();
+    }
+
+    public function billingAddress() {
+        return $this->addresses()->where("type", Address::TYPE_BILLING)->first();
     }
 
     public function toArray() {

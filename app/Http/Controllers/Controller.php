@@ -34,7 +34,7 @@ abstract class Controller extends BaseController
     }
 
     protected function getCartOrNewCart(User $user) {
-        $cart = $user->carts()->where('closed', false)->first();
+        $cart = $user->carts()->whereIn('status', array(0, 1))->first();
         if (is_null($cart)) {
             $cart = new Cart();
             $user->save();
