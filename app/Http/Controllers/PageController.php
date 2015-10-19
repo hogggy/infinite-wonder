@@ -14,6 +14,7 @@ use App\Models\Product;
 use App\Utils\EmailUtil;
 use App\Utils\PaylineUtility;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PageController extends Controller
 {
