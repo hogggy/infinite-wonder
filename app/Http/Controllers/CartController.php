@@ -87,6 +87,7 @@ class CartController extends Controller{
         $cart->last_four = $request->input('lastFour');
         $cart->exp_month = $request->input('expMonth');
         $cart->exp_year = $request->input('expYear');
+        Log::error($request->input('sameAsShipping'));
         $cart->same_as_shipping = $request->input('sameAsShipping');
         $cart->status = Cart::STATUS_CHECKOUT;
         if ($cart->same_as_shipping) {
