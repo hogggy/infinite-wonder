@@ -72,8 +72,9 @@ class PageController extends Controller
     public function review(Request $request) {
         $user = $this->getUserFromCookies($request);
         $cart = $this->getCartOrNewCart($user);
-        if ($cart->status !== Cart::STATUS_CHECKOUT || !$request->input('token-id')) {
-            Log::error($cart->status);
+        $token = $request->input('token-id');
+        if ($cart->status !== Cart::STATUS_CHECKOUT || is_null($token)) {
+            Log::error($token);
             return redirect('/');
         }
 
