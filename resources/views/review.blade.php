@@ -105,7 +105,7 @@
             </table>
         </div>
         <div class="col-md-6 text-right">
-            <a href="/thank-you?token-id={{ $token }}">
+            <a href="/thank-you?token-id={{ $token }}&cart-id={{ $cart->id }}">
                 <button id="confirm">
                     Confirm Purchase
                 </button>

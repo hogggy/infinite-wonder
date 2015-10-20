@@ -48,7 +48,7 @@ class PageController extends Controller
     }
 
     public function thankYou(Request $request) {
-        $cartId = $request->input('cartId');
+        $cartId = $request->input('cart-id');
         $cart = Cart::find($cartId);
         $token = $request->input('token-id');
         if (!$cartId || !$cart || !$token) {
