@@ -26,10 +26,12 @@ class BeforeMiddleware
             $user = User::find($userId);
             if (!is_null($user)) {
                 $cart = $user->carts()->whereIn('status', array(0,1))->first();
-                foreach ($cart->items()->get() as $item) {
-                    $product = $item->product()->first();
-                    $price += $product->price * $item->quantity;
-                    $cartItems += $item->quantity;
+                if (!is_null($cart)) {
+                    foreach ($cart->items()->get() as $item) {
+                        $product = $item->product()->first();
+                        $price += $product->price * $item->quantity;
+                        $cartItems += $item->quantity;
+                    }
                 }
             }
         }
