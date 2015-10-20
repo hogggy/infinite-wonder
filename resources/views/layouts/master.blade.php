@@ -17,7 +17,11 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div id="logo">
-                            <span class="site-name"><a class="navbar-brand" href="/" title="Dazzling Demo" rel="home">Infinite Wonder</a></span>
+                            <span class="site-name">
+                                <a class="navbar-brand" href="/" title="Dazzling Demo" rel="home">
+                                    <img style="max-width:100px; margin-top: -7px;" src="{{ URL::asset('images/home/logo.jpg') }}">
+                                </a>
+                            </span>
                         </div><!-- end of #logo -->
                     </div>
                     <div class="collapse navbar-collapse navbar-ex1-collapse">

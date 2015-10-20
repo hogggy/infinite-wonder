@@ -3,29 +3,21 @@
 @section('content')
     <div class="row carousel-holder">
         <div class="col-md-12">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div id="carousel-homepage" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-homepage" data-slide-to="0" class="active"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="slide-image" src="http://placehold.it/1200x500" alt="">
-                    </div>
-                    <div class="item">
-                        <img class="slide-image" src="http://placehold.it/1200x500" alt="">
-                    </div>
-                    <div class="item">
-                        <img class="slide-image" src="http://placehold.it/1200x500" alt="">
+                        <img class="slide-image active" src="{{ URL::asset('images/home/all-bags.jpg') }}" alt="">
                     </div>
                 </div>
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <!--<a class="left carousel-control" href="#carousel-homepage" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <a class="right carousel-control" href="#carousel-homepage" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
+                </a>-->
             </div>
         </div>
     </div>
@@ -33,8 +25,8 @@
 
     <!-- Title -->
     <div class="row">
-        <div class="col-lg-2 col-lg-offset-5">
-            <h3>Top Sellers</h3>
+        <div class="col-lg-12 text-center">
+            <h3>Hydration Packs</h3>
         </div>
     </div>
     <!-- /.row -->
@@ -44,9 +36,11 @@
     <div class="row text-center">
         @foreach ($products as $product)
             <div class="col-md-3 col-sm-6">
-                <a href="/product/{{ $product->id }}" rel="bookmark">
-                    <img src="http://placehold.it/400x500" alt="">
-                </a>
+                <div class="product">
+                    <a href="/product/{{ $product->id }}" class="product"  rel="bookmark">
+                        <img src="{{ URL::asset('images/products/' . $product->id . "/main.jpg") }}" alt="Product main image">
+                    </a>
+                </div>
                 <div class="row text-left">
                     <div class="col-sm-12">
                         <h5 class="entry-title">

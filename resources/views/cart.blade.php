@@ -18,7 +18,7 @@
                 @foreach ($items as $item)
                     <li class="row cart-item" id="{{ $item->id }}">
                         <span class="quantity"><input pattern="[0-9]*" min="0" max="99" class="change-quantity" type="number" value="{{ $item->quantity }}"/></span>
-                        <span class="itemName">{{ $item->product->name }}</span>
+                        <span class="itemName"><a href="/product/{{ $item->product->id }}">{{ $item->product->name }}</a></span>
                         <span class="glyphicon glyphicon-remove remove"></span>
                         <span class="price">${{ $item->product->price }}</span>
                     </li>

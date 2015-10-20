@@ -29,7 +29,7 @@ Route::post('cart/card', 'CartController@addCardInfo');
 Route::post('address', 'AddressController@address');
 
 Route::get('product/{id}', function($id) {
-    return view('product', array('product' => App\Models\Product::find($id)->first()));
+    return view('product', array('product' => App\Models\Product::find($id)));
 });
 
 Route::get('about', function() {

@@ -70,7 +70,10 @@ class PageController extends Controller
             $mailer->sendReceipt($cart);
         }
 
-        return response()->view('thankYou', array('cartId' => $cartId));
+        return response()->view('thankYou', array(
+            'cartId' => $cartId,
+            'cartItemCount' => 0
+        ));
     }
 
     public function review(Request $request) {

@@ -5,12 +5,20 @@
 @stop
 
 @section('content')
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h3>Hydration Packs</h3>
+        </div>
+    </div>
+    <hr>
     <div class="row text-center">
         @foreach ($products as $product)
             <div class="col-md-3 col-sm-6">
-                <a href="/product/{{ $product->id }}" rel="bookmark">
-                    <img src="http://placehold.it/400x500" alt="">
-                </a>
+                <div class="product">
+                    <a class="product" href="/product/{{ $product->id }}" rel="bookmark">
+                        <img src="{{ URL::asset('images/products/' . $product->id . "/main.jpg") }}" alt="">
+                    </a>
+                </div>
                 <div class="row text-left">
                     <div class="col-sm-12">
                         <h5 class="entry-title">

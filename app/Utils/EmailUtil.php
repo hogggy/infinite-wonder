@@ -23,7 +23,7 @@ class EmailUtil {
         $user = $cart->user()->first();
 
         $response = $mg->sendMessage($domain, array(
-            'from' => 'support@mg.fullprintcamping.com',
+            'from' => 'support@fullprintcamping.com',
             'to' => $user->email,
             'subject' => "Your order at FullPrintCamping.com",
             'text' => "fullprintcamping.com/order-details/" . $cart->id

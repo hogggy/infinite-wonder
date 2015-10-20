@@ -68,6 +68,15 @@ a {
     color: #1FA67A;
 }
 
+div.product>a>img {
+    height: 100%;
+}
+
+div.product {
+    height: 400px;
+}
+
+
 a:hover,
 a:focus {
     color: #333;
@@ -321,7 +330,7 @@ div.addToCartModal button:nth-child(2) {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: -96px auto -62px;
+    margin: -96px auto 10px;
     padding-top: 140px;
     padding-bottom: 100px;
 }
@@ -684,7 +693,6 @@ li.recentcomments {
 .navbar > .container .navbar-brand {
     color: #1FA67A;
     font-size: 24px;
-    margin: 8px 0;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
