@@ -23,7 +23,7 @@ class EmailUtil {
 
         $mg->sendMessage($domain, array(
             'from' => 'support@fullprintcamping.com',
-            'to' => $user->emaail,
+            'to' => $user->email,
             'subject' => "Your order at FullPrintCamping.com",
             'text' => "fullprintcamping.com/order-details/" . $cart->id
         ));

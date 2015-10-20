@@ -57,17 +57,18 @@ class PageController extends Controller
 
             return redirect('/');
         }
-        $util = new PaylineUtility();
-        $errors = $util->stepThree($token);
-        if (!is_null($errors)) {
-            return redirect('/my-cart?section=billing&error=' . urlencode($errors));
+        if ($cart->status != Cart::STATUS_CLOSED) {
+            $util = new PaylineUtility();
+            $errors = $util->stepThree($token);
+            if (!is_null($errors)) {
+                return redirect('/my-cart?section=billing&error=' . urlencode($errors));
+            }
+            $cart->status = Cart::STATUS_CLOSED;
+            $cart->save();
+
+            $mailer = new EmailUtil();
+            $mailer->sendReceipt($cart);
         }
-
-        $cart->status = Cart::STATUS_CLOSED;
-        $cart->save();
-
-        $mailer = new EmailUtil();
-        $mailer->sendReceipt($cart);
 
         return response()->view('thankYou', array('cartId' => $cartId));
     }
