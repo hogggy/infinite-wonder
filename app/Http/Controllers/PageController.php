@@ -38,7 +38,8 @@ class PageController extends Controller
             'billing' => $billingAddress,
             'shipping' => $shippingAddress,
             'email' => $user->email,
-            'section' => $request->input('section', 'cart')
+            'section' => $request->input('section', 'cart'),
+            'error' => $request->input('error')
         ));
     }
 
@@ -58,7 +59,9 @@ class PageController extends Controller
         }
         $util = new PaylineUtility();
         $errors = $util->stepThree($token);
-        Log::error($errors->getBody());
+        if (!is_null($errors)) {
+            return redirect('/my-cart?section=billing&error=' . urlencode($errors));
+        }
 
         $cart->status = Cart::STATUS_CLOSED;
         $cart->save();

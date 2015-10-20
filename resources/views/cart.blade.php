@@ -392,6 +392,11 @@
                         </div>
                     </div>
                     <br>
+                    @if (!is_null($error))
+                        <div class='form-row error'>
+                            {{ $error }}
+                        </div>
+                    @endif
                     <div class='form-row'>
                         <div class='col-xs-12 form-group required'>
                             <label class='control-label'>Name on Card</label>

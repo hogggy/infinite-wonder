@@ -11,6 +11,7 @@ namespace App\Utils;
 use GuzzleHttp\Client, App\Models\Address;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Facades\Log;
 
 class PaylineUtility {
 
@@ -65,8 +66,15 @@ class PaylineUtility {
             $xml->asXML()
         );
         $response = $client->send($request);
+        $responseXml = simplexml_load_string($response->getBody()->__toString());
+        if ($responseXml->result == 1) {
+            return null;
+        }
+        $errorText = $responseXml->{'result-text'};
+        Log::error("Error in checkout: " . $errorText);
+        $code = $responseXml->{'result-code'};
 
-        return $response;
+        return $errorText;
     }
 
 }
