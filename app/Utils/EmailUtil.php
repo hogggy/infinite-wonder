@@ -29,7 +29,7 @@ class EmailUtil {
             'text' => "fullprintcamping.com/order-details/" . $cart->id
         ));
 
-        Log::info($response);
+        var_dump($response);
     }
 
 }
