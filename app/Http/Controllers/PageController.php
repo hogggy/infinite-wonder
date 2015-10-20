@@ -58,7 +58,7 @@ class PageController extends Controller
         }
         $util = new PaylineUtility();
         $errors = $util->stepThree($token);
-        Log::error($errors);
+        Log::error($errors->getBody());
 
         $cart->status = Cart::STATUS_CLOSED;
         $cart->save();
