@@ -99,7 +99,7 @@
                         <label class='control-label nowrap'>Postal Code</label>
                     </div>
                     <div class='col-xs-8 form-group'>
-                        <input name="postal" class='form-control' size='4' type='number' required value="{{ !empty($shipping) ? $shipping->postal : "" }}">
+                        <input name="postal" class='form-control' size='4' type='text' required value="{{ !empty($shipping) ? $shipping->postal : "" }}">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>

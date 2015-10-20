@@ -75,7 +75,7 @@ class PaylineUtility {
         $errorText = $responseXml->{'result-text'}->__toString();
         Log::error("Error in checkout: " . $errorText);
         $code = $responseXml->{'result-code'};
-        $arr = explode($errorText, ' REFID');
+        $arr = explode(' REFID', $errorText);
 
         return $arr[0];
     }
