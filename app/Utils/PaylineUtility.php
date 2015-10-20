@@ -70,11 +70,12 @@ class PaylineUtility {
         if ($responseXml->result == 1) {
             return null;
         }
-        $errorText = $responseXml->{'result-text'};
+        $errorText = $responseXml->{'result-text'}->__toString();
         Log::error("Error in checkout: " . $errorText);
         $code = $responseXml->{'result-code'};
-
-        return $errorText;
+        $arr = explode($errorText, ' REFID');
+        
+        return $arr[0];
     }
 
 }
