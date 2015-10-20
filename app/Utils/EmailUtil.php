@@ -11,6 +11,7 @@ namespace App\Utils;
 
 use App\Models\Cart;
 use Mailgun\Mailgun;
+use Illuminate\Support\Facades\Log;
 
 class EmailUtil {
 
@@ -21,12 +22,14 @@ class EmailUtil {
         $domain = "fullprintcamping.com";
         $user = $cart->user()->get();
 
-        $mg->sendMessage($domain, array(
+        $response = $mg->sendMessage($domain, array(
             'from' => 'support@fullprintcamping.com',
             'to' => $user->email,
             'subject' => "Your order at FullPrintCamping.com",
             'text' => "fullprintcamping.com/order-details/" . $cart->id
         ));
+
+        Log::info($response);
     }
 
 }
