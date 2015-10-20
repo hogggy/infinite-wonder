@@ -62,7 +62,7 @@ class PaylineUtility {
             "POST",
             self::postUrl,
             array('Content-Type' => 'text/xml; charset=UTF8'),
-            $xml
+            $xml->asXML()
         );
         $response = $client->send($request);
 
