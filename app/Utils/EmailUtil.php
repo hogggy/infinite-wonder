@@ -20,7 +20,7 @@ class EmailUtil {
     public function sendReceipt(Cart $cart) {
         $mg = new Mailgun(self::API_KEY);
         $domain = "fullprintcamping.com";
-        $user = $cart->user()->get();
+        $user = $cart->user()->first();
 
         $response = $mg->sendMessage($domain, array(
             'from' => 'support@fullprintcamping.com',
