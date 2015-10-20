@@ -66,6 +66,8 @@ class PaylineUtility {
             $xml->asXML()
         );
         $response = $client->send($request);
+        Log::info("Step 3 Response:");
+        Log::info($response->getBody());
         $responseXml = simplexml_load_string($response->getBody()->__toString());
         if ($responseXml->result == 1) {
             return null;
@@ -74,7 +76,7 @@ class PaylineUtility {
         Log::error("Error in checkout: " . $errorText);
         $code = $responseXml->{'result-code'};
         $arr = explode($errorText, ' REFID');
-        
+
         return $arr[0];
     }
 
