@@ -395,7 +395,7 @@
                     @if (!is_null($error))
                         <div class='form-row'>
                             <div class='col-xs-12 form-group error'>
-                                {{ $error }}
+                                <p>{{ $error }}</p>
                             </div>
                         </div>
                     @endif

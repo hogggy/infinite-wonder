@@ -287,6 +287,17 @@ span.remove:hover {
 	padding: 20px 30px;
 }
 
+.error {
+    border: 1px solid #ebccd1;
+    border-radius: 5px;
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.error>p {
+    margin: 10px;
+}
+
 button.cart-button {
     background-color: #f08573;
     color: #fbfffa;
