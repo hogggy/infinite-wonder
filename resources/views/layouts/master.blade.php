@@ -3,6 +3,7 @@
         <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ URL::asset('images/favicon.ico') }}"/>
         @yield('style')
     </head>
     <body>
