@@ -73,8 +73,8 @@ class PageController extends Controller
         $user = $this->getUserFromCookies($request);
         $cart = $this->getCartOrNewCart($user);
         $token = $request->input('token-id');
-        if ($cart->status !== Cart::STATUS_CHECKOUT || is_null($token)) {
-            Log::error($token);
+        if ($cart->status != Cart::STATUS_CHECKOUT || is_null($token)) {
+            Log::error("Cart status is not equal to 1 ot token id not provided");
             return redirect('/');
         }
 
